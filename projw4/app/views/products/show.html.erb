@@ -14,8 +14,8 @@
          <li>Width:<%= @product.dimension_w%></li>
          <li>Length:<%= @product.dimension_l%></li>
          <li>Height:<%= @product.dimension_h%></li>
-        <li>Original price:<%= @product.price%></li>
-        <li>Price with Discount:<%= @product.priced%></li> 
+        <li>Original price:<%= number_to_currency(@product.price)%></li>
+        <li> Price with Discount:<%=number_to_currency(@product.priced)%></li> 
      
       </ul>
        <%= link_to "Back to list", "/products/" %>

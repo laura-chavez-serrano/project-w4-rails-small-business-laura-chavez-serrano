@@ -29,8 +29,8 @@
       <%# <td><%= product.description %></td>
       <td><%= product.discount %></td>
       <th><%= product.onclearance%></td>
-      <%# <th><%= product.price%></td>
-      <th><%= product.priced %></td>
+     
+      <th><%= number_to_currency(product.priced) %></td>
       <td>
        <%= link_to "Details", "/products/#{product.id}" %>
       </td>

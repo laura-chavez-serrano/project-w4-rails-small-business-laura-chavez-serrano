@@ -66,8 +66,9 @@ class ProductsController < ApplicationController
         end
         
         
-        # number_to_currency_us (price)
+        
         product.priced = price
+        
         # Do not show items on the site that have a quantity of 0.
         quantity=0
         quantity=product.quantity.to_i
@@ -80,9 +81,6 @@ class ProductsController < ApplicationController
     @products
     end
 
-    # def number_to_currency_us(number)
-    #     number_to_currency=""
-    #     number_to_currency(number, :unit => "$ ", :separator => ",", :delimiter => ".")
-    #   end
+    
    
 end
