@@ -2,8 +2,8 @@ require 'csv'
 class ProductsController < ApplicationController
     def index
         
-        @products = fill_product
-        # @products.sort_by { |h| h[:category] }
+        @productsa = fill_product
+         @products = @productsa.sort_by { |h| h.category }
      end
 
 
@@ -70,7 +70,7 @@ class ProductsController < ApplicationController
         product.priced = price
         
         # Do not show items on the site that have a quantity of 0.
-        quantity=0
+       
         quantity=product.quantity.to_i
         if quantity>0
             

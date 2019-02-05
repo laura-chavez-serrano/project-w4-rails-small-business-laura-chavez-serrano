@@ -1,26 +1,32 @@
+<section class="jumbotron text-center" >
+    <div class="container">
 <h1>Detail of Product</h1>
 
  
 <thead>
     <tr>
-<h3> <%= @product.description %></h3>
-<td> <%=image_tag(@product.img_file,{:style => "width:400px;margin-left:600px"})%></td> <br>
-<th>Product Specifications</th>
+<p> <%= @product.description %></p>
+<td> <%=image_tag(@product.img_file,{:style => "width:300px;margin-left:100px"})%></td> <br>
+
     </tr>
 </thead> 
+
+
 <tbody>
+<p class="text-left">Product Specifications</p>
      <ul>
-        <li>Discount:<%= @product.discount%></li>  
-         <li>Width:<%= @product.dimension_w%></li>
-         <li>Length:<%= @product.dimension_l%></li>
-         <li>Height:<%= @product.dimension_h%></li>
-        <li>Original price:<%= number_to_currency(@product.price)%></li>
-        <li> Price with Discount:<%=number_to_currency(@product.priced)%></li> 
+        <li class="text-left">Discount:<%= @product.discount%></li>  
+         <li class="text-left">Width:<%= @product.dimension_w%></li>
+         <li class="text-left">Length:<%= @product.dimension_l%></li>
+         <li class="text-left">Height:<%= @product.dimension_h%></li>
+        <li class="text-left">Original price:<%= number_to_currency(@product.price)%></li>
+        <li class="text-left"> Price with Discount:<%=number_to_currency(@product.priced)%></li> 
      
       </ul>
        <%= link_to "Back to list", "/products/" %>
       </li>
   
   </tbody>
-
+  </div>
+</section>
 

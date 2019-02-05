@@ -11,42 +11,53 @@
  
 <table>
   <tr>
+  <th class="text-left">Category</th>
     <th class="text-center">Units</th>
     <th class="text-center">Product</th>
     
    
     <th class="text-center">Discount </th>
-     <th>        </th>
-      <th class="text-center" >Price </th>
+    <th><%= "  " %></th>
+    <th><%= "  " %></th>
+    <th><%= "  " %></th>
+      <th class="text-right" >Price </th>
+      
     
 
   </tr>
-</section>
+
 </div>
+</section>
+<div class="card-body">
  <tbody>
- <div class="card-body">
-  <% @products.each do |product| %>
-    <tr>
-     
-      
-          <td><%= product.quantity %></td>
-          <td><%= product.item %></td>
-        <% if product.discount != "0%" %>
-          <td><%= product.discount %></td>
-          <td><%= product.onclearance%></td>
-          <% else%>
+ 
+    <% @products.each do |product| %>
+      <tr>
+
+            <td class="text-left"><%= product.category%>
+            <td><%= product.quantity %></td>
+            <td class="text-left"><%= product.item %></td>
+          <% if product.discount != "0%" %>
+            <td><%= product.discount %></td>
+            <td><%= product.onclearance%></td>
+            <% else%>
+            <td><%= "" %></td>
+            <td><%= ""%></td>
+          <%end %>
           <td><%= "" %></td>
-          <td><%= ""%></td>
-        <%end %>
-          <td><%= number_to_currency(product.priced) %></td>
-          <td>
-          <%= link_to "Details", "/products/#{product.id}" %></td>
-      
-      
-    </tr>
-  <%end %>
+          <td><%= "" %></td>
+            <td class="text-right"><%= number_to_currency(product.priced) %></td>
+            <td><%= "" %></td>
+            <td><%= "" %></td>
+            <td><%= link_to "Details", "/products/#{product.id}" %></td>
+            
+        
+        
+      </tr>
+    <%end %>
   </tbody>
   </div>
 
 </table>
+
 <%end %>
