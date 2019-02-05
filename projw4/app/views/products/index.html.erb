@@ -27,19 +27,22 @@
  <div class="card-body">
   <% @products.each do |product| %>
     <tr>
-      <div class="col-md-4">
-      <div class="card mb-4 shadow-sm">
+     
+      
           <td><%= product.quantity %></td>
           <td><%= product.item %></td>
-        
+        <% if product.discount != "0%" %>
           <td><%= product.discount %></td>
           <td><%= product.onclearance%></td>
-        
+          <% else%>
+          <td><%= "" %></td>
+          <td><%= ""%></td>
+        <%end %>
           <td><%= number_to_currency(product.priced) %></td>
           <td>
           <%= link_to "Details", "/products/#{product.id}" %></td>
-      </div>
-      </div>
+      
+      
     </tr>
   <%end %>
   </tbody>
