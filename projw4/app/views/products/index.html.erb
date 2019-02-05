@@ -1,42 +1,49 @@
-<h1>Stock in our store</h1>
+<section class="jumbotron text-center" >
+    <div class="container">
+<h3>Stock in our store</h3>
  <% if @products.blank? %>
  <em> No stock available</em>
 
  <%else%> 
+<%= link_to "Home", "/welcome/index/" %>
+ 
 
+ 
 <table>
- <%= link_to "Home", "/welcome/index/" %>
-<thead>
   <tr>
-     <th>Units available</th>
-    <th>Product</th>
+    <th class="text-center">Units</th>
+    <th class="text-center">Product</th>
     
    
-    <th>Discount </th>
+    <th class="text-center">Discount </th>
      <th>        </th>
-      <th>Price </th>
+      <th class="text-center" >Price </th>
     
 
   </tr>
-</thead>
+</section>
+</div>
  <tbody>
+ <div class="card-body">
   <% @products.each do |product| %>
     <tr>
-    
-     <%# <td> <%=image_tag(product.img_file,{:style => "width:100px;"})%></td>
-      <td><%= product.quantity %></td>
-      <td><%= product.item %></td>
-      <%# <td><%= product.description %></td>
-      <td><%= product.discount %></td>
-      <th><%= product.onclearance%></td>
-     
-      <th><%= number_to_currency(product.priced) %></td>
-      <td>
-       <%= link_to "Details", "/products/#{product.id}" %>
-      </td>
+      <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+          <td><%= product.quantity %></td>
+          <td><%= product.item %></td>
+        
+          <td><%= product.discount %></td>
+          <td><%= product.onclearance%></td>
+        
+          <td><%= number_to_currency(product.priced) %></td>
+          <td>
+          <%= link_to "Details", "/products/#{product.id}" %></td>
+      </div>
+      </div>
     </tr>
   <%end %>
   </tbody>
+  </div>
 
 </table>
 <%end %>
