@@ -14,7 +14,6 @@ class ProductsController < ApplicationController
         @product = Convert.find{|p| p.id == params[:id].to_i}
      end
 
-         #fill information from CSV to @product array
      
     
 

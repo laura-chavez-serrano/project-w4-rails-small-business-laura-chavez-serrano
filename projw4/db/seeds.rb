@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
-CSV.foreach('/Users/laura.s.chavez/Documents/projects/project-w4-rails-small-business-laura-chavez-serrano/projw4/db/faust_inventory.csv', headers: true) do |row|
+CSV.foreach('/Users/laura.s.chavez/Documents/projects/project-w4-rails-small-business-laura-chavez-serrano/projw4/db/faust_inventory.csv', headers: true, skip_blanks: true) do |row|
   Convert.create(row.to_h)
   
 end
