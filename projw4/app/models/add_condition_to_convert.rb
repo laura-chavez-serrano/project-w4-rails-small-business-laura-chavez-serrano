@@ -1,0 +1,2 @@
+class AddConditionToConvert < ApplicationRecord
+end

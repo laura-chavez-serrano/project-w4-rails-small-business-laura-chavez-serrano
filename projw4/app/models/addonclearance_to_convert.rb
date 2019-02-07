@@ -1,0 +1,2 @@
+class AddonclearanceToConvert < ApplicationRecord
+end

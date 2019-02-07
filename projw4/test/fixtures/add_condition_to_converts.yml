@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  condition: MyString
+  discount: MyString
+  onclearance: MyString
+
+two:
+  condition: MyString
+  discount: MyString
+  onclearance: MyString

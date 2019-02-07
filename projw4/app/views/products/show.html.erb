@@ -1,12 +1,12 @@
 <section class="jumbotron text-center" >
     <div class="container">
-<h1>Detail of Product</h1>
+<h1><%=@product.item%></h1>
 
  
 <thead>
     <tr>
 <p> <%= @product.description %></p>
-<td> <%=image_tag(@product.img_file,{:style => "width:300px;margin-left:100px"})%></td> <br>
+<td> <%=image_tag(@product.img_file,{:style => "width:300px;margin-left:50px"})%></td> <br>
 
     </tr>
 </thead> 
@@ -20,7 +20,7 @@
          <li class="text-left">Length:<%= @product.dimension_l%></li>
          <li class="text-left">Height:<%= @product.dimension_h%></li>
         <li class="text-left">Original price:<%= number_to_currency(@product.price)%></li>
-        <li class="text-left"> Price with Discount:<%=number_to_currency(@product.priced)%></li> 
+        <%# <li class="text-left"> Price with Discount:<%=number_to_currency(@product.priced)%></li>  %>
      
       </ul>
        <%= link_to "Back to list", "/products/" %>

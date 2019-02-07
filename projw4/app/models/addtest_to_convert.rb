@@ -1,0 +1,2 @@
+class AddtestToConvert < ApplicationRecord
+end
