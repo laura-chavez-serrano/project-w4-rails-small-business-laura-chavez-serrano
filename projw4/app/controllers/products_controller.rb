@@ -1,6 +1,6 @@
 require 'csv'
 class ProductsController < ApplicationController
-    def index
+    def index(category)
         
         @productsa = fill_product
          @products = @productsa.sort_by { |h| h.category }
