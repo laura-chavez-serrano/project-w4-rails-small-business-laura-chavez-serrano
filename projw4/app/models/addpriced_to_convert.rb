@@ -1,0 +1,2 @@
+class AddpricedToConvert < ApplicationRecord
+end

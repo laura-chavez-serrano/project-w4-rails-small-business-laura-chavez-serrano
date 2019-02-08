@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_07_182346) do
+ActiveRecord::Schema.define(version: 2019_02_08_002142) do
 
   create_table "converts", primary_key: "pid", force: :cascade do |t|
     t.string "item"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_02_07_182346) do
     t.integer "dimension_h"
     t.string "discount"
     t.string "onclearance"
+    t.integer "priced"
   end
 
 end
