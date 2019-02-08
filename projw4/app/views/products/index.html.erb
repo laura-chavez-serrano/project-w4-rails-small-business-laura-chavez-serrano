@@ -1,6 +1,19 @@
 <section class="jumbotron text-center" >
     <div class="container">
-<h3>Stock in our store</h3>
+<h3>Stock in our store</h3><br>
+<div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Filter by</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected >Categories...</option>
+                <option value= "1" >bedroom</option>
+                <option value="2">desk</option>
+                <option value="3">miscellaneous</option>
+                <option value="4">seating</option>
+                <option value="5">tables</option>
+            </select>
+        </div>
  <% if @products.blank? %>
  <em> No stock available</em>
 
