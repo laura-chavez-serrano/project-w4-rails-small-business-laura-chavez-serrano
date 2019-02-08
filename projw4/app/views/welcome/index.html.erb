@@ -3,8 +3,23 @@
         <h1> Welcome to Faust Furniture</h1>
         <h2>Please select and option:</h2>
 
-        <%= link_to 'All furnitures Available', products_path("chair") %> <br>
-        <%= link_to 'Only one Category', products_path("")%>
+        <%= link_to 'All furnitures Available', products_path %> <br>
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Categories</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>Select one...</option>
+                <option value="1">bedroom</option>
+                <option value="2">desk</option>
+                <option value="3">miscellaneous</option>
+                <option value="4">seating</option>
+                <option value="5">tables</option>
+            </select>
+            <%   link_to 'Only one Category', products_path("")%>
+        </div>
+        
 </div>
 
 <%=image_tag ("hero.jpg"),{:style => "height:35vw;width:70vw;margin-left:100px;margin-top:15px;"}%>
