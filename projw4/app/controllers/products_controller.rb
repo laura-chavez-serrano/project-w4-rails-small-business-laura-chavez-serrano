@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
         @product = Convert.find{|p| p.id == params[:id].to_i}
      end
 
-     
+     def params_
     
 
     
