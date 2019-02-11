@@ -14,7 +14,11 @@ class ProductsController < ApplicationController
         @product = Convert.find{|p| p.id == params[:id].to_i}
      end
 
-     def params_
+     private
+
+     def params_convert
+            params.require(:convert).permit(:category)
+     end
     
 
     
