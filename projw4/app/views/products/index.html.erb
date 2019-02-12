@@ -8,8 +8,14 @@
  <em> No stock available</em>
 
  <%else%> 
-<%= link_to "Home", "/welcome/index/" %>
+<%= link_to "Home", "/welcome/index/" %> <br>
+
+
+ <%= form_tag(:action => :index) do %>
+  <%= select_tag "category", options_for_select(@categories) %>
+  <%= submit_tag "Filter" %>
  
+<% end %>
  
 <table>
   <tr>
