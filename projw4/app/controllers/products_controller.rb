@@ -2,9 +2,14 @@
 class ProductsController < ApplicationController
     def index
         
-        # @productsa = fill_product
+        @categories = Convert.find_by_sql("SELECT category FROM converts GROUP BY category").map &:category
+       if params[:category].blank? 
         @productsa = Convert.all.where("quantity > 0")
          @products = @productsa.sort_by { |h| h.category }
+       else
+        @products = Convert.where(category: params[:category])
+       end
+        
     end
 
 
@@ -13,13 +18,6 @@ class ProductsController < ApplicationController
         
         @product = Convert.find{|p| p.id == params[:id].to_i}
      end
-
-     private
-
-     def params_convert
-            params.require(:convert).permit(:category)
-     end
-    
 
     
    

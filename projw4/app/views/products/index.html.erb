@@ -8,9 +8,13 @@
  <em> No stock available</em>
 
  <%else%> 
-<%= link_to "Home", "/welcome/index/" %>
+
+ <%= form_tag(products_path, :method => :get) do %>
+  <%= select_tag "category", options_for_select(@categories) %>
+  <%= submit_tag "Filter" %><br>
  
- 
+<% end %>
+ <%= link_to "Home", "/welcome/index/" %> 
 <table>
   <tr>
   <th class="text-left">Category</th>
