@@ -1,20 +1,21 @@
 <section class="jumbotron text-center" >
     <div class="container">
 <h3>Stock in our store</h3><br>
-<div class="input-group mb-3">
-            
-      
+
+            <%= link_to "Home", "/welcome/index/" %> 
+      <div class="input-group mb-3">
  <% if @products.blank? %>
  <em> No stock available</em>
 
  <%else%> 
 
  <%= form_tag(products_path, :method => :get) do %>
+ <%= submit_tag "Selection by Category" %>
   <%= select_tag "category", options_for_select(@categories) %>
-  <%= submit_tag "Filter" %><br>
+  
  
 <% end %>
- <%= link_to "Home", "/welcome/index/" %> 
+ 
 <table>
   <tr>
   <th class="text-left">Category</th>
