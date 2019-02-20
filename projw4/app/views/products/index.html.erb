@@ -10,10 +10,9 @@
  <%else%> 
 
  <%= form_tag(products_path, :method => :get) do %>
- <%= submit_tag "Selection by Category" %>
-  <%= select_tag "category", options_for_select(@categories) %>
-  
  
+  <%= select_tag "category", options_for_select(@categories) %>
+  <%= submit_tag "Submit" %>
 <% end %>
  
 <table>
